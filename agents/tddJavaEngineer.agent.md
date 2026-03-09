@@ -27,8 +27,10 @@ If the plan status is `draft` or acceptance criteria are incomplete, stop and re
 
 3. **Scaffold the pattern directory**
    - Create `src/<pattern-name>/` with a Gradle build file
-   - Dependencies: confluent-kafka Java client, JUnit 5, Mockito, Jackson (unless the plan specifies otherwise)
-   - Java version: 21
+   - Dependencies: confluent-kafka Java client, JUnit 5, Mockito, Jackson, Lombok, Vavr (unless the plan specifies otherwise)
+   - Use Lombok annotations (`@Value`, `@Builder`, `@Data`, `@Getter`, etc.) to eliminate boilerplate — getters, setters, constructors, builders
+   - Use Vavr for functional data structures (`Option`, `Either`, `Try`, immutable collections) in preference to null returns and checked exceptions
+   - Java version: 25
 
 4. **TDD loop — repeat for each acceptance criterion**
    - Write a failing test that directly maps to the criterion (red)

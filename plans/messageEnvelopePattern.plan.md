@@ -1,7 +1,7 @@
 # Plan: Message Envelope Pattern
 
 ## Status
-`draft`
+`done`
 
 ## Problem
 Create a message envelope pattern that wraps a Kafka message payload with a standard set of metadata headers. This gives every message a consistent identity, traceability, and routing context without coupling producers and consumers to a specific schema.
@@ -41,13 +41,13 @@ The envelope sits inside the Kafka `ProducerRecord` value — the key field of t
 Auto-populated fields (MessageId, SentTime, Host, etc.) are set in the constructor. User and Request fields default to null and are set via builder or setters.
 
 ## Acceptance criteria
-- [ ] `MessageEnvelope<K, V>` is a generic, serializable Java class
-- [ ] Auto-populated fields are set on construction with no caller input required
-- [ ] Null partition key is handled gracefully (falls back to null key in `ProducerRecord`, Kafka round-robins)
-- [ ] Serialization roundtrip test: envelope with all header fields populated deserializes to an equal object
-- [ ] Serialization roundtrip test: envelope with only required (Auto) fields set
-- [ ] `common/` package builds and can be imported by a sibling pattern module
-- [ ] README explains the pattern, the Type legend, and how to extend it with Avro/Schema Registry
+- [x] `MessageEnvelope<K, V>` is a generic, serializable Java class
+- [x] Auto-populated fields are set on construction with no caller input required
+- [x] Null partition key is handled gracefully (falls back to null key in `ProducerRecord`, Kafka round-robins)
+- [x] Serialization roundtrip test: envelope with all header fields populated deserializes to an equal object
+- [x] Serialization roundtrip test: envelope with only required (Auto) fields set
+- [x] `common/` package builds and can be imported by a sibling pattern module
+- [x] README explains the pattern, the Type legend, and how to extend it with Avro/Schema Registry
 
 ## Out of scope
 - Usage of this envelope within a specific messaging pattern (covered by subsequent pattern plans)

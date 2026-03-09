@@ -5,7 +5,7 @@ When you want to implement the Message Envelope pattern using the TDD Java Engin
 Run this once — the output is `src/common/` which other patterns depend on.
 
 ## Context to provide
-- Plan: `plans/messageEnvelopePattern.md`
+- Plan: `plans/messageEnvelopePattern.plan.md`
 - No existing source code to build on — this is greenfield
 
 ## Prompt
@@ -15,7 +15,7 @@ You are acting as the TDD Java Engineer agent defined in `agents/tddJavaEngineer
 
 Implement the following plan in full, following every step in the agent definition.
 
-Plan file: `plans/messageEnvelopePattern.md`
+Plan file: `plans/messageEnvelopePattern.plan.md`
 
 Key implementation notes:
 - The output directory is `src/common/` — this is an explicit exception to the no-shared-utils convention because other patterns depend on this envelope
